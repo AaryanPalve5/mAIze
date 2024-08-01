@@ -9,23 +9,6 @@ body {
     margin: 0;
 }
 
-button {
-    font-size: 1.5rem;
-    text-align: center;
-    align-items: center;
-    
-    margin: 20px 20px;
-    padding: 20px 20px;
-
-    cursor: pointer;
-    background-color: #007bff; /* Primary color */
-    color: #fff; /* Text color */
-    border: none;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
-}
-
 button:hover {
     background-color: #0056b3; /* Darker shade on hover */
 }
@@ -100,3 +83,21 @@ button:active {
     margin: 10px;
 }
 
+
+
+#startBtn{
+
+    font-size: 1.5rem; /* Keep the original font size */
+    margin: 20px 20px;
+    padding: 20px 20px;
+    cursor: pointer;
+    background-color: #007bff; /* Primary color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+
+}
