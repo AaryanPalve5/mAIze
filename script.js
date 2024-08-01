@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         carvePath(0, 0);
 
         let placedObstacles = 0;
-        while (placedObstacles < 10) {
+        while (placedObstacles < 20) {
             let x, y;
             do {
                 x = Math.floor(Math.random() * mazeSize);

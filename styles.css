@@ -101,3 +101,13 @@ button:active {
     font-family:Verdana, Geneva, Tahoma, sans-serif ;
 
 }
+
+
+h1 {
+    font-size: 3rem; /* Adjust the font size */
+    color: #007bff; /* Primary color or any color that fits the theme */
+    text-align: center; /* Center the title */
+    margin: 20px 0; /* Space above and below the title */
+    font-family: 'Verdana', sans-serif; /* Use the same font as your buttons */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for better readability */
+}
