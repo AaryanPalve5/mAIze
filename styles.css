@@ -1,140 +1,102 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    margin: 0;
 }
+
+button {
+    font-size: 1.5rem;
+    text-align: center;
+    align-items: center;
+    
+    margin: 20px 20px;
+    padding: 20px 20px;
+
+    cursor: pointer;
+    background-color: #007bff; /* Primary color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+button:active {
+    transform: scale(0.98); /* Slightly shrink button when clicked */
+}
+
+#controls button {
+    width: 50px; /* Slightly larger buttons */
+    height: 50px;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
 
 #maze {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
-    gap: 2px;
-    width: 90vw;
-    max-width: 600px;
-    height: 90vh;
-    background-color: #ddd;
-    border: 3px solid #333;
-    border-radius: 8px;
+    gap: 1px;
+    margin: 20px;
+    width: 90vw;  /* Responsive width */
+    height: 90vw; /* Maintain aspect ratio */
+    max-width: 600px; /* Maximum width for larger screens */
+    max-height: 600px; /* Maximum height for larger screens */
+    overflow: hidden;
 }
 
 .cell {
-    background-color: #eee;
-    border: 1px solid #ccc;
-    position: relative;
-    transition: background-color 0.3s;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
 }
 
 .cell.obstacle {
-    background-color: #666;
+    background-color: #000;
 }
 
 .cell.start {
-    background-color: #4caf50;
+    background-color: #0f0;
 }
 
 .cell.end {
-    background-color: #f44336;
+    background-color: #f00;
 }
 
 .cell.player {
-    background-color: #2196f3;
+    background-color: #00f;
+}
+
+.cell.visited {
+    background-color: #ccf;
+}
+
+.cell.best-path {
+    background-color: #ff0;
 }
 
 #controls {
-    display: grid;
-    grid-template-columns: 60px 60px 60px;
-    grid-template-rows: 60px 60px;
-    gap: 5px;
-    margin-top: 20px;
-}
-
-#controls button {
-    background-color: #ffffff;
-    border: 2px solid #666;
-    color: #333;
-    font-size: 2rem;
-    margin: 5px;
-    padding: 10px 15px;
-    border-radius: 6px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
-    width: 60px;
-    height: 60px;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-}
-
-#controls button:hover {
-    background-color: #f0f0f0;
-}
-
-#controls button:active {
-    background-color: #e0e0e0;
-    transform: translateY(2px);
-}
-
-#controls .up {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-
-#controls .left {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-#controls .right {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-}
-
-#controls .down {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-
-#score {
-    margin-top: 15px;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-#gameMessage {
-    margin-top: 15px;
-    font-size: 1.5rem;
-    color: green;
-}
-
-@media (max-width: 600px) {
-    #maze {
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        gap: 1px;
-    }
-
-    #controls {
-        grid-template-columns: 50px 50px 50px;
-        grid-template-rows: 50px 50px;
-    }
-
-    #controls button {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-}
-.cell.visited {
-    background-color: #90caf9; /* Light blue color for visited cells */
+    margin: 10px;
 }
 
 
-.cell.best-path {
-    background-color: #ffeb3b; /* Highlight the best path with yellow */
+
+#score, #gameMessage, #shortestPathDisplay {
+    font-size: 1rem;
+    margin: 10px;
 }
+
