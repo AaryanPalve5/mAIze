@@ -1,0 +1,140 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#maze {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 2px;
+    width: 90vw;
+    max-width: 600px;
+    height: 90vh;
+    background-color: #ddd;
+    border: 3px solid #333;
+    border-radius: 8px;
+}
+
+.cell {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.cell.obstacle {
+    background-color: #666;
+}
+
+.cell.start {
+    background-color: #4caf50;
+}
+
+.cell.end {
+    background-color: #f44336;
+}
+
+.cell.player {
+    background-color: #2196f3;
+}
+
+#controls {
+    display: grid;
+    grid-template-columns: 60px 60px 60px;
+    grid-template-rows: 60px 60px;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+#controls button {
+    background-color: #ffffff;
+    border: 2px solid #666;
+    color: #333;
+    font-size: 2rem;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#controls button:hover {
+    background-color: #f0f0f0;
+}
+
+#controls button:active {
+    background-color: #e0e0e0;
+    transform: translateY(2px);
+}
+
+#controls .up {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+#controls .left {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+#controls .right {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+#controls .down {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+#score {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#gameMessage {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: green;
+}
+
+@media (max-width: 600px) {
+    #maze {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 1px;
+    }
+
+    #controls {
+        grid-template-columns: 50px 50px 50px;
+        grid-template-rows: 50px 50px;
+    }
+
+    #controls button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+.cell.visited {
+    background-color: #90caf9; /* Light blue color for visited cells */
+}
+
+
+.cell.best-path {
+    background-color: #ffeb3b; /* Highlight the best path with yellow */
+}
