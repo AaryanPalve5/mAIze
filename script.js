@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (newX >= 0 && newX < mazeSize && newY >= 0 && newY < mazeSize) {
             if (!maze[newY][newX].classList.contains('obstacle')) {
-                maze[playerPosition.y][playerPosition.x].classList.remove('player');
                 playerPosition = { x: newX, y: newY };
                 updatePlayerPosition();
                 moveCount++;
@@ -181,37 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startBtn.addEventListener('click', initMaze);
 
-    // Mobile controls
-    document.addEventListener('touchstart', handleTouchStart, false);
-    document.addEventListener('touchend', handleTouchEnd, false);
-
-    let touchStartX = 0;
-    let touchStartY = 0;
-
-    function handleTouchStart(e) {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-    }
-
-    function handleTouchEnd(e) {
-        const touchEndX = e.changedTouches[0].clientX;
-        const touchEndY = e.changedTouches[0].clientY;
-
-        const dx = touchEndX - touchStartX;
-        const dy = touchEndY - touchStartY;
-
-        if (Math.abs(dx) > Math.abs(dy)) {
-            if (dx > 0) {
-                movePlayer(1, 0); // Move right
-            } else {
-                movePlayer(-1, 0); // Move left
-            }
-        } else {
-            if (dy > 0) {
-                movePlayer(0, 1); // Move down
-            } else {
-                movePlayer(0, -1); // Move up
-            }
-        }
-    }
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp') movePlayer(0, -1);
+        if (e.key === 'ArrowDown') movePlayer(0, 1);
+        if (e.key === 'ArrowLeft') movePlayer(-1, 0);
+        if (e.key === 'ArrowRight') movePlayer(1, 0);
+    });
 });
