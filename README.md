@@ -51,3 +51,6 @@ Welcome to **mAIze**, a simple yet engaging maze game where you navigate through
 3. **Open the index.html File: Open index.html in your web browser to start playing.**:
 
    
+Visit the live application at [mAIze](https://aaryanpalve5.github.io/mAIze/).
+
+   
